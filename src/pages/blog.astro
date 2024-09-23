@@ -1,0 +1,45 @@
+---
+import Master from "../layouts/Master.astro";
+import Social from "../components/Social.astro";
+var allPosts = await Astro.glob('/src/pages/blogposts/*.md');
+allPosts.sort((a,b) => Date.parse(b.frontmatter.crdate) - Date.parse(a.frontmatter.crdate));
+const latest_path = allPosts[0].url;
+---
+<style>
+    p{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .latest-btn{
+        display:flex;
+        justify-content:center;
+    }
+    .post-item{
+        display:inline-block;
+        padding:1rem 1rem;
+        background-color:#292941;
+        border-radius:1rem;
+    }
+    .list-wrapper{
+        display:flex;
+        justify-content: center;
+        flex-wrap:wrap;
+        gap:1.5rem;
+        max-width:80ch;
+        margin:2rem auto;
+    }
+</style>
+<Master title="Blog Index">
+        <p>
+            Below are links to all my blog posts. Browse at your own risk, opinions
+            are my own, etc. Enjoy!
+        </p>
+        <div class="latest-btn">
+        <Social url={latest_path} site="Latest Post"/>
+        </div>
+        <h2 class="list-wrapper">All posts:</h2>
+        <div class="list-wrapper">
+        {allPosts.map((post) => <a href={post.url} class="post-item">{post.frontmatter.title}</a>)}
+        </div>
+</Master>

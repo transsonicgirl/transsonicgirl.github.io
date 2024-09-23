@@ -1,0 +1,41 @@
+---
+import Social from "./Social.astro";
+---
+<style>
+    footer{
+        display:flex; 
+        gap:2rem;
+        margin:0;
+        margin-bottom:0;
+        background-color:#42416e;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        left:0;
+        justify-content:left;
+
+    }
+    p{
+        display:flex;
+        gap:2rem;
+        padding-left:8rem;
+        margin:0 0;
+    }
+    @media screen and (max-width:635px){
+        p{
+            padding-left:0rem;
+            justify-self:center;
+        }
+        h1{
+            display:none;
+        }
+    }
+</style>
+<footer>
+    <p>
+        <h1>Socials:</h1>
+        <Social url="https://www.github.com/transsonicgirl" site="Github" />
+        <Social url="https://www.twitter.com/transsonicgirl" site="Twitter" />
+        <Social url="mailto:allison.byrnes42@gmail.com" site="Email" />
+    </p>
+</footer>

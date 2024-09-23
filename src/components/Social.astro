@@ -1,0 +1,26 @@
+---
+const {site, url} = Astro.props;
+---
+<style>
+    a{
+        
+        display:inline-flex;
+        background-color:#292941;
+        /* background-color: #49496e; */
+        padding: 1rem 1rem;
+        color: #b29cbb;
+        text-decoration:solid;
+        font-weight:bold;
+        font-size:18px;
+        margin-bottom:1rem;
+        margin-top:1rem;
+        border-radius:1rem;
+    }
+
+    a:hover{
+        background-color: #4f4f64;
+        color:rgb(159, 82, 231);
+    }
+</style>
+
+<a href={url}>{site}</a>

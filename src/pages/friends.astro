@@ -1,0 +1,27 @@
+---
+import '../styles/global.css'
+import Master from '../layouts/Master.astro'
+import FriendCard from '../components/FriendCard.astro';
+const allFriends = await Astro.glob('../friends/*.md');
+---
+<style>
+    div{
+        display:flex;
+        flex-wrap:wrap;
+        gap:1.25rem;
+        justify-content:center;
+    }
+    p{
+        margin-bottom:2rem;
+    }
+</style>
+<Master title="Friends">
+    <p>Below are some of the people I like and/or work with. Go check them out!
+        If I missed you feel free to reach out- I'm not perfect and this is certainly not a complete list
+        of all the people who matter to me. I'm seriously honored and amazed at how many amazing people I'm able to
+        talk about here. 
+    </p>
+    <div>
+        {allFriends.map((friend) => <FriendCard frontmatter={friend.frontmatter} textbody={friend}/>)}
+    </div>
+</Master>

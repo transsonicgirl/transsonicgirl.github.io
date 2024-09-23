@@ -1,0 +1,67 @@
+---
+import '../styles/global.css'
+import type { ImageMetadata } from 'astro';
+import { imageMetadata } from 'astro/assets/utils';
+import { Image } from 'astro:assets';
+const { frontmatter, textbody } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata}>('/src/images/*.{jpg,jpeg,png,gif}');
+const dispImg = frontmatter.img_url!="/src/images/placeholder.png"
+---
+<style>
+    .project{
+        display:inline-flex;
+        background-color:#292941;
+        color: #d7acec;
+        padding:1.5rem 1.5rem;
+        border-radius: 2rem;
+        text-decoration:none;
+    }
+
+    
+    .project:visited{
+        background-color:#292941;
+        border:#b8b8d4;
+        color: #d7acec;
+    }
+    .project:hover{
+        background-color:#4f4f64;
+        color:rgb(159, 82, 231);
+    }
+    .projectheader{
+        justify-self:center;
+        display:flex;
+        padding:0.5rem 0.25rem;
+    }
+    .projectheader h1{
+        display:inline-flex;
+        align-self:center;
+    }
+    .projectheader img{
+        display:inline-flex;
+        margin:0rem 1rem;
+    }
+    @media screen and (max-width:635px){
+        .projectheader img{
+            display:none;
+        }
+        
+    }
+
+    .projectbody {
+        display:block
+        text-wrap:wrap;
+        max-width:40ch
+    }
+
+</style>
+
+<a class="project" href={frontmatter.proj_url}>
+    <div class="projectbody">
+        <h1>{frontmatter.title}</h1>
+        {textbody.rawContent()}
+    </div>
+    <div class="projectheader">
+        {dispImg && <Image src={images[frontmatter.img_url]()} alt="" width="200"/>}
+    </div>
+    
+</a>

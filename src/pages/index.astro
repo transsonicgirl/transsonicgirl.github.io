@@ -1,16 +1,55 @@
 ---
-
+import dayjs from "dayjs";
+import '../styles/global.css'
+import Master from '../layouts/Master.astro'
+import AllProjects from '../components/AllProjects.astro'
+const employer = "Pacific Light & Hologram"
+const empurl = "https://www.pacificlightandhologram.com"
+const city = "Denver"
+const birthdate = dayjs('2004-03-04');
+const current = dayjs();
+const yearsold = current.diff(birthdate,'year');
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+<style>
+	p{
+		margin-bottom:3rem;
+		padding:0rem 2rem;
+	}
+	h2{
+		display:flex;
+		justify-content:center;
+		margin-top:3rem;
+	}
+	.basics{
+		display:flex;
+		justify-content:center;
+		margin-bottom:1rem;
+	}
+</style>
+<Master title="Allison Byrnes">
 	<body>
-		<h1>Astro</h1>
+		<p>
+			Hi! My name is Allison, I'm a {city}-based aerospace engineer focusing on 
+			guidance, navigation and control (GNC) systems. Thanks for visiting! This site serves as a place for me to showcase my work,
+			talk about myself, and link to some people and projects I really like. 
+			I'm currently {employer != "unemployed" && `employed by `} {employer != "unemployed" && <a href={empurl}>{employer}.</a>}
+			{employer === "unemployed" && "looking for work!"} You can see some of my past projects below, along with links to relevant
+			sites and details! 
+		</p>
+		<h2>Basics:</h2>
+		<p class="basics">
+			Location: {city}
+		</p>
+		<p class="basics">
+			Pronouns: she/her 
+		</p>
+		<p class="basics">
+			Occupation: Guidance & control engineer
+		</p>
+		<p class="basics">
+			Age: {yearsold} years old
+		</p>
+		<h2>My Projects!</h2>
 	</body>
-</html>
+	<AllProjects/>
+</Master>
