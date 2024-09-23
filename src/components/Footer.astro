@@ -12,14 +12,13 @@ import Social from "./Social.astro";
         bottom:0;
         width:100%;
         left:0;
-        justify-content:left;
+        justify-content:center;
         align-content:center;
 
     }
     p{
         display:flex;
         gap:2rem;
-        padding-left:8rem;
         margin:0 0;
         justify-content:center;
         align-content:center;
@@ -29,8 +28,8 @@ import Social from "./Social.astro";
     }
     @media screen and (max-width:635px){
         p{
-            padding-left:0rem;
             justify-self:center;
+            justify-content:center;
         }
         h1{
             display:none;
@@ -38,8 +37,9 @@ import Social from "./Social.astro";
     }
 </style>
 <footer>
+    <h1>Socials:</h1>
     <p>
-        <h1>Socials:</h1>
+        
         <Social url="https://www.github.com/transsonicgirl" site="Github" />
         <Social url="https://www.twitter.com/transsonicgirl" site="Twitter" />
         <Social url="mailto:allison.byrnes42@gmail.com" site="Email" />
