@@ -19,21 +19,32 @@ const {frontmatter} = Astro.props;
 
 </style>
 <style is:global>
+    body{
+        max-width:150ch;
+        margin:1rem auto;
+        margin-bottom: 8rem;
+    }
     p{
-        max-width:100ch;
-        margin:2rem auto;
+        margin:1rem auto;
+    }
+    h2{
+        margin:1rem auto;
     }
     img{
         max-width:500px;
-        
     }
+    
 </style>
 <Master title={frontmatter.title}>
     <div>
     <h2>Published: {frontmatter.crdate.toString().slice(0,10)}</h2>
+    
+    </div>
+    <div>
+        <h3>By {frontmatter.author}</h3>
     </div>
     <div class="postbody">
-    <slot style="p{dislpay:block;margin-top:1rem;}"/>
+    <slot/>
     </div>
     
 </Master>
