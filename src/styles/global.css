@@ -40,6 +40,23 @@ p{
     justify-content: center;
 }
 
+@media screen and (max-width:635px){
+    .pagetitle{
+        font-size:17px;
+        justify-content:center;
+        align-content:center;
+    }
+    .postheader{
+        font-size:16px;
+        margin:0.5rem auto;
+    }
+    p{
+        margin:1rem auto;
+        max-width:85%
+    }
+    
+}
+
 .nav-links{
     width:100%;
     top: 5rem;
