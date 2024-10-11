@@ -10,7 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.4",
-    "dayjs": "^1.11.13"
+    "@astrojs/rss": "^4.0.8",
+    "astro": "^4.16.0",
+    "dayjs": "^1.11.13",
+    "markdown-it": "^14.1.0",
+    "sanitize-html": "^2.13.1"
   }
 }
