@@ -10,7 +10,6 @@ export async function GET(context) {
     title: 'Allison\'s Blog',
     description: 'Local lesbian aerospace guidance engineer\'s thoughtstream',
     site: context.site,
-    stylesheet: '/public/pretty-feed-v3.xsl',
     items: posts.map((post)=> ({
         link:post.url,
         content: sanitizeHtml(post.compiledContent()),
