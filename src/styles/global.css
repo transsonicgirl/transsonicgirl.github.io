@@ -20,10 +20,12 @@ a{
 
 h2{
     font-size:22px;
+    text-align:center;
 }
 
 h1{
     font-size:26px;
+    text-align:center;
 }
 a:visited{
     color:blueviolet;
