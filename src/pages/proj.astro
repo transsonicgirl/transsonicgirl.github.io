@@ -1,6 +1,6 @@
 ---
 import Master from "../layouts/Master.astro";
-import OtherProjects from "/src/components/OtherProjects.astro";
+import AllProjects from "/src/components/AllProjects.astro";
 ---
 <style>
     p:{
@@ -9,11 +9,6 @@ import OtherProjects from "/src/components/OtherProjects.astro";
     }
 </style>
 
-<Master title="Others' Projects">
-    <p>
-        Below are some projects made by others that I
-        think are really great! You should give these a
-        look and support them if you can. 
-    </p>
-    <OtherProjects/>
+<Master title="My Projects">
+    <AllProjects/>
 </Master>
