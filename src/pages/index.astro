@@ -3,9 +3,9 @@ import dayjs from "dayjs";
 import '../styles/global.css'
 import Master from '../layouts/Master.astro'
 import AllProjects from '../components/AllProjects.astro'
-const employer = "Pacific Light & Hologram"
-const empurl = "https://www.pacificlightandhologram.com/"
-const city = "Denver"
+const employer = "SpaceX"
+const empurl = "https://www.spacex.com"
+const city = "Seattle"
 const birthdate = dayjs('2004-03-04');
 const current = dayjs();
 const yearsold = current.diff(birthdate,'year');
@@ -30,8 +30,8 @@ const yearsold = current.diff(birthdate,'year');
 <Master title="Allison Byrnes">
 	<body>
 		<p>
-			Hi! My name is Allison, I'm a {city}-based aerospace engineer focusing on 
-			guidance, navigation and control (GNC) systems. Thanks for visiting! This site serves as a place for me to showcase my work,
+			Hi! My name is Allison, I'm a {city}-based software engineer focusing on 
+			embedded systems & GNC. Thanks for visiting! This site serves as a place for me to showcase my work,
 			talk about myself, and link to some people and projects I really like. 
 			I'm currently {employer != "unemployed" && `employed by `} {employer != "unemployed" && <a href={empurl}>{employer}.</a>}
 			{employer === "unemployed" && "looking for work!"} You can see some of my past projects below, along with links to relevant

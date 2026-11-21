@@ -17,9 +17,8 @@ const allFriends = await Astro.glob('../friends/*.md');
 </style>
 <Master title="Friends">
     <p>Below are some of the people I like and/or work with. Go check them out!
-        If I missed you feel free to reach out- I'm not perfect and this is certainly not a complete list
-        of all the people who matter to me. I'm seriously honored and amazed at how many amazing people I'm able to
-        talk about here. 
+        If we're friends and you want to be added here, send me your website & a picture you want featured
+        and we can make it happen. ^-^
     </p>
     <div>
         {allFriends.map((friend) => <FriendCard frontmatter={friend.frontmatter} textbody={friend}/>)}
